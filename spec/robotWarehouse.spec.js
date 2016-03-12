@@ -11,5 +11,9 @@ describe('Robot Warehouse', function() {
     it('knows its position on x axis', function() {
       expect(robot.x).toEqual(0);
     });
+
+    it('knows its position on y axis', function() {
+      expect(robot.y).toEqual(0);
+    });
   });
 });
