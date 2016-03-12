@@ -3,4 +3,7 @@ var RobotWarehouse = function(x, y) {
   this.y = y || 0;
 };
 
+RobotWarehouse.prototype.move = function(direction) {
+};
+
 module.exports = RobotWarehouse;

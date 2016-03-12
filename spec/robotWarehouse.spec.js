@@ -16,4 +16,11 @@ describe('Robot Warehouse', function() {
       expect(robot.y).toEqual(0);
     });
   });
+
+  describe('movement', function() {
+  
+    it('responds to an instruction to move', function() {
+      expect(robot.move).toBeDefined();
+    });
+  });
 });
