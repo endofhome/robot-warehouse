@@ -38,5 +38,11 @@ describe('Robot Warehouse', function() {
       robot.move('S');
       expect(robot.y).toEqual(0);
     });
+
+    it('can move west', function() {
+      robot.move('E');
+      robot.move('W');
+      expect(robot.x).toEqual(0);
+    });
   });
 });

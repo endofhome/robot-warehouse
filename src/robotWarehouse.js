@@ -4,7 +4,7 @@ var RobotWarehouse = function(x, y) {
 };
 
 RobotWarehouse.prototype.move = function(direction) {
-  var directions = { 'N': [0,1], 'E': [1,0], 'S': [0,-1] };
+  var directions = { 'N': [0,1], 'E': [1,0], 'S': [0,-1], 'W': [-1,0] };
   this.x += directions[direction][0];
   this.y += directions[direction][1];
 };
