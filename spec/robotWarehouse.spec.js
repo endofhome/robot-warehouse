@@ -16,9 +16,13 @@ describe('Robot Warehouse', function() {
     });
   });
 
-  describe('movement', function() {
+  describe('simple movement', function() {
     it('responds to an instruction to move', function() {
       expect(robot.move).toBeDefined();
+    });
+
+    it('responds to only one instruction to move', function() {
+      expect(robot.moveOne).toBeDefined();
     });
 
     it('can move north', function() {
@@ -47,6 +51,14 @@ describe('Robot Warehouse', function() {
   describe('limiting the robots movement', function() {
     it('cannot move outside of the warehouse', function() {
       expect(function() {robot.move('S')}).toThrowError('Robot cannot move outside of the warehouse');
+    });
+  });
+
+  describe('accepting multiple movement instructions', function() {
+    it('can respond to 2 instructions to move in different directions', function() {
+      robot.move('N E');
+      expect(robot.x).toEqual(1);
+      expect(robot.y).toEqual(1);
     });
   });
 });

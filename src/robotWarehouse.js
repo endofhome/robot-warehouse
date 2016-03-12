@@ -3,7 +3,7 @@ var RobotWarehouse = function(x, y) {
   this.y = y || 0;
 };
 
-RobotWarehouse.prototype.move = function(direction) {
+RobotWarehouse.prototype.moveOne = function(direction) {
   var directions = { 'N': [0,1], 'E': [1,0], 'S': [0,-1], 'W': [-1,0] };
   var newXPosition = this.x += directions[direction][0];
   var newYPosition = this.y += directions[direction][1];
@@ -13,6 +13,13 @@ RobotWarehouse.prototype.move = function(direction) {
   } else {
     throw new Error('Robot cannot move outside of the warehouse');
   }
+};
+
+RobotWarehouse.prototype.move = function(directionsString) {
+  var directionsArray = directionsString.split(' ');
+  for(var i=0;i<directionsArray.length;i++) {
+    this.moveOne(directionsArray[i]);
+  };
 };
 
 module.exports = RobotWarehouse;
