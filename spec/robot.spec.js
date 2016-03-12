@@ -1,9 +1,9 @@
-var RobotWarehouse = require('../src/robotWarehouse.js');
+var Robot = require('../src/robot.js');
 
 describe('Robot Warehouse', function() {
 
   beforeEach(function() {
-    robot = new RobotWarehouse();
+    robot = new Robot();
   });
 
   describe('initialisation', function() {

@@ -1,9 +1,9 @@
-var RobotWarehouse = function(x, y) {
+var Robot = function(x, y) {
   this.x = x || 0;
   this.y = y || 0;
 };
 
-RobotWarehouse.prototype.moveOne = function(direction) {
+Robot.prototype.moveOne = function(direction) {
   var directions = { 'N': [0,1], 'E': [1,0], 'S': [0,-1], 'W': [-1,0] };
   var newXPosition = this.x += directions[direction][0];
   var newYPosition = this.y += directions[direction][1];
@@ -15,11 +15,11 @@ RobotWarehouse.prototype.moveOne = function(direction) {
   }
 };
 
-RobotWarehouse.prototype.move = function(directionsString) {
+Robot.prototype.move = function(directionsString) {
   var directionsArray = directionsString.split(' ');
   for(var i=0;i<directionsArray.length;i++) {
     this.moveOne(directionsArray[i]);
   }
 };
 
-module.exports = RobotWarehouse;
+module.exports = Robot;
