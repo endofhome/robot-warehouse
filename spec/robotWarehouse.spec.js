@@ -7,7 +7,6 @@ describe('Robot Warehouse', function() {
   });
 
   describe('initialisation', function() {
-   
     it('knows its position on x axis', function() {
       expect(robot.x).toEqual(0);
     });
@@ -18,7 +17,6 @@ describe('Robot Warehouse', function() {
   });
 
   describe('movement', function() {
-  
     it('responds to an instruction to move', function() {
       expect(robot.move).toBeDefined();
     });
@@ -43,6 +41,12 @@ describe('Robot Warehouse', function() {
       robot.move('E');
       robot.move('W');
       expect(robot.x).toEqual(0);
+    });
+  });
+
+  describe('limiting the robots movement', function() {
+    it('cannot move outside of the warehouse', function() {
+      expect(function() {robot.move('S')}).toThrowError('Robot cannot move outside of the warehouse');
     });
   });
 });

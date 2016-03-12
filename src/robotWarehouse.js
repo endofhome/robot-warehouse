@@ -5,8 +5,14 @@ var RobotWarehouse = function(x, y) {
 
 RobotWarehouse.prototype.move = function(direction) {
   var directions = { 'N': [0,1], 'E': [1,0], 'S': [0,-1], 'W': [-1,0] };
-  this.x += directions[direction][0];
-  this.y += directions[direction][1];
+  var newXPosition = this.x += directions[direction][0];
+  var newYPosition = this.y += directions[direction][1];
+  if (!(newXPosition<0) && !(newYPosition<0)) {
+    this.x = newXPosition;
+    this.y = newYPosition;
+  } else {
+    throw new Error('Robot cannot move outside of the warehouse');
+  }
 };
 
 module.exports = RobotWarehouse;
