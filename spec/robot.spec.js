@@ -49,8 +49,12 @@ describe('Robot Warehouse', function() {
   });
 
   describe('limiting the robots movement', function() {
-    it('cannot move outside of the warehouse', function() {
+    it('cannot move outside south or west of the warehouse', function() {
       expect(function() {robot.move('S');}).toThrowError('Robot cannot move outside of the warehouse');
+    });
+
+    it('cannot move outside north or east of the warehouse', function() {
+      expect(function() {robot.move('N N N N N N N N N N');}).toThrowError('Robot cannot move outside of the warehouse');
     });
   });
 
