@@ -50,7 +50,7 @@ describe('Robot Warehouse', function() {
 
   describe('limiting the robots movement', function() {
     it('cannot move outside of the warehouse', function() {
-      expect(function() {robot.move('S')}).toThrowError('Robot cannot move outside of the warehouse');
+      expect(function() {robot.move('S');}).toThrowError('Robot cannot move outside of the warehouse');
     });
   });
 
