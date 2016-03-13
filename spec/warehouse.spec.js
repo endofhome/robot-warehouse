@@ -35,7 +35,6 @@ describe('A warehouse', function() {
     });
   });
 
-
   describe('creating crates', function() {
     it('new crates can be created', function() {
       expect(warehouse.createCrate()).toEqual(mockCrate);

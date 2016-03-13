@@ -14,6 +14,10 @@ describe('Robot Warehouse', function() {
     it('knows its position on y axis', function() {
       expect(robot.y).toEqual(0);
     });
+
+    it('can carry crates', function() {
+      expect(robot.crate).toEqual({});
+    });
   });
 
   describe('simple movement', function() {
@@ -65,4 +69,11 @@ describe('Robot Warehouse', function() {
       expect(robot.y).toEqual(1);
     });
   });
+
+  describe('moving crates', function() {
+    it('can lift crates', function() {
+      expect(robot.lift).toBeDefined();
+    });
+  });
+
 });

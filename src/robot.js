@@ -1,6 +1,7 @@
 var Robot = function(x, y) {
   this.x = x || 0;
   this.y = y || 0;
+  this.crate = {};
 };
 
 Robot.prototype.moveOne = function(direction) {
@@ -20,6 +21,9 @@ Robot.prototype.move = function(directionsString) {
   for(var i=0;i<directionsArray.length;i++) {
     this.moveOne(directionsArray[i]);
   }
+};
+
+Robot.prototype.lift = function(positionArray) {
 };
 
 module.exports = Robot;
