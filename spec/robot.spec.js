@@ -74,6 +74,10 @@ describe('Robot Warehouse', function() {
     it('can lift crates', function() {
       expect(robot.lift).toBeDefined();
     });
-  });
 
+    it('cannot lift more than one crate', function() {
+      robot.crate = { objectType: 'crate' };
+      expect(function() {robot.lift([4,4])}).toThrowError('Sorry, this robot can only carry one crate');
+    });
+  });
 });

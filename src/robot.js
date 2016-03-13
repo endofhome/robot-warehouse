@@ -24,6 +24,9 @@ Robot.prototype.move = function(directionsString) {
 };
 
 Robot.prototype.lift = function(positionArray) {
+  if (this.crate.length !== 0) {
+    throw new Error('Sorry, this robot can only carry one crate');
+  };
 };
 
 module.exports = Robot;
